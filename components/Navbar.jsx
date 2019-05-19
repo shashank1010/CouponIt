@@ -74,7 +74,7 @@ class CouponItNavbar extends React.Component {
 			<Jumbotron fluid className="page-hero position-relative text-center text-white">
 				<Container className="py-5">
 					<h1>Cashback offers + Discount Offers</h1>
-					<Row className="my-5">
+					<Row className="my-5 d-sm-none">
 						<Col sm={{ span: 8, offset: 2 }}>
 							<Form className="p-1 bg-white d-flex">
 								<Dropdown>

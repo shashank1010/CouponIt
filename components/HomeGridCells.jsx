@@ -70,7 +70,7 @@ class HomeGridCells extends React.Component{
 
     render() {
         const {loaded, cells, loadedCount} = this.state;
-        const cellMap = cells.map((cell, i) => <Col className="d-flex justify-content-stretch" xs="2" sm="3" key={i}><HomeGridCell cell={ cell } /></Col>)
+        const cellMap = cells.map((cell, i) => <Col className="d-flex justify-content-stretch" xs="6" sm="3" key={i}><HomeGridCell cell={ cell } /></Col>)
         const hasCells = cellMap.length > 0
 
         return (
