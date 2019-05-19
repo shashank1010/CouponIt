@@ -24,6 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build && npm run export",
+    "subtree": "git subtree push --prefix out origin gh-pages",
     "deploy": "gh-pages -d out",
     "serve": "http-server ./out"
   },
