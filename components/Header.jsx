@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import PropTypes from "prop-types"
 import Head from 'next/head'
@@ -18,6 +17,7 @@ const Header = ({ title, meta, moreMeta, showHero}) => {
         return <>
             <Head>
                 <title>{ title }</title>
+                <link href="./static/bootstrap.min.css" rel="stylesheet" type="text/css" />
                 <link href="./static/app.css" rel="stylesheet" type="text/css" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 {
