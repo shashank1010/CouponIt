@@ -1,0 +1,94 @@
+.open-menu .nav-link:after{
+    content: "";
+    padding: 5px 5px 0 0;
+    width: 0;
+    height: 0;
+    border-radius: 5px;
+    display: block;
+    margin: 10px auto 0;
+    background: rgba(0,0,0,0);
+    transition: 0.3s background;
+    will-change: background;
+}
+.open-menu .nav-link.active:after{
+    background: red;
+}
+.search .search-icon{
+    left: 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+.search input[type="search"],
+.search input[type="text"]{
+    padding-left: 2rem;
+}
+.page-hero {
+    --circleOffset: 2.5vw;
+    background: url(../static/header-img.png) center/cover;
+    overflow: hidden;
+}
+.page-hero:before, .page-hero:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 2px;
+    margin: -1px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 calc(var(--circleOffset) * 2) rgba(255,255,255,0.3), 0 0 0 calc(var(--circleOffset) * 4) rgba(255,255,255,0.3), 0 0 0 calc(var(--circleOffset) * 6) rgba(255,255,255,0.3);
+    transform-origin: center;
+}
+.page-hero:before {
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+}
+.page-hero:after {
+    transform: translate(50%, 50%);
+    bottom: 0;
+    right: 0;
+}
+
+.section-header {
+    font-size: 1.5rem;
+}
+.widget-1{
+    background-image: linear-gradient(-225deg, #0BB5E8 0%, #057FCD 100%);
+}
+.widget-1 .list-group .list-group-item{
+    background: none;
+    border-color: rgba(255,255,255,0.1)
+}
+
+.widget-2{
+    word-break: break-all;
+}
+.widget-2 .list-group-item {
+    background-size: cover;
+    background-position:center;
+    background-color: #fff;
+    flex: 1 1 33%;
+    will-change: flex-basis;
+    transition: 0.3s flex-basis;
+}
+.widget-2 .list-group-item:hover {
+    flex-basis: 45%;
+}
+.widget-2 .list-group-item .prop-name {
+    width: 1ch;
+    display: block;
+    margin: 0 auto;
+    word-break: break-all;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    min-height: 10ch;
+    opacity: 0;
+    will-change: opacity;
+    transition: 0.3s opacity;
+    text-shadow: 0 0 2px rgba(0,0,0,0.5)
+}
+.widget-2 .list-group-item:hover .prop-name {
+    opacity: 1;
+}
