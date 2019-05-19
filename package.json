@@ -1,0 +1,45 @@
+{
+  "name": "coupon-it",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://shashank1010.github.io/CouponIt",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "bootstrap": "^4.3.1",
+    "gh-pages": "^2.0.1",
+    "next": "^8.1.0",
+    "next-offline": "^4.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
+    "react-cache": "^2.0.0-alpha.1",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export && touch ./out/.nojekyll",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build && npm run export",
+    "deploy": "gh-pages -d out",
+    "serve": "http-server ./out"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
