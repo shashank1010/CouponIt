@@ -1,35 +1,35 @@
 self.__precacheManifest = [
   {
-    "url": "/{reponame}/_next/static/chunks/commons.dd350127c4aabb3f702f.js",
+    "url": "/CouponIt/_next/static/chunks/commons.dd350127c4aabb3f702f.js",
     "revision": "9b8bdbc79b2c4924b24c"
   },
   {
-    "url": "/{reponame}/_next/static/css/commons.bbea3502.chunk.css",
+    "url": "/CouponIt/_next/static/css/commons.bbea3502.chunk.css",
     "revision": "9b8bdbc79b2c4924b24c"
   },
   {
-    "url": "/{reponame}/_next/static/runtime/main-a21604b48a41d27a172b.js",
+    "url": "/CouponIt/_next/static/runtime/main-a21604b48a41d27a172b.js",
     "revision": "9d250441aa08cd347361"
   },
   {
-    "url": "/{reponame}/_next/static/runtime/webpack-8ed9452df514b4d17d80.js",
+    "url": "/CouponIt/_next/static/runtime/webpack-8ed9452df514b4d17d80.js",
     "revision": "c9d4f4ac318bec9c37e2"
   },
   {
-    "url": "/{reponame}/_next/static/wsG9TMm183K4oQ2SPzOcD/pages/_app.js",
-    "revision": "01c0d87f313e6d947e52"
+    "url": "/CouponIt/_next/static/xywuynGdWsYJVZ0ss8Dif/pages/_app.js",
+    "revision": "d91fa8bed1d20ba02ce0"
   },
   {
-    "url": "/{reponame}/_next/static/wsG9TMm183K4oQ2SPzOcD/pages/_error.js",
-    "revision": "174c9c6587ddac76122c"
+    "url": "/CouponIt/_next/static/xywuynGdWsYJVZ0ss8Dif/pages/_error.js",
+    "revision": "6b721d0573f195f6623e"
   },
   {
-    "url": "/{reponame}/_next/static/wsG9TMm183K4oQ2SPzOcD/pages/index.js",
-    "revision": "5d1b1a8e268c507c6d9d"
+    "url": "/CouponIt/_next/static/xywuynGdWsYJVZ0ss8Dif/pages/index.js",
+    "revision": "80ad30f579cfb9fb5bde"
   },
   {
-    "url": "/{reponame}/_next/static/wsG9TMm183K4oQ2SPzOcD/pages/otherPage.js",
-    "revision": "468a1c65b399873555c4"
+    "url": "/CouponIt/_next/static/xywuynGdWsYJVZ0ss8Dif/pages/otherPage.js",
+    "revision": "8d772c909055b3c283a7"
   }
 ];
 
