@@ -1,27 +1,27 @@
 self.__precacheManifest = [
   {
-    "url": "/CouponIt/_next/static/1eQDwa7xlxhcXbMuBDdrv/pages/_app.js",
-    "revision": "26cb0ee5a4fda6824fae"
-  },
-  {
-    "url": "/CouponIt/_next/static/1eQDwa7xlxhcXbMuBDdrv/pages/_error.js",
-    "revision": "e004c51d3327fc518874"
-  },
-  {
-    "url": "/CouponIt/_next/static/1eQDwa7xlxhcXbMuBDdrv/pages/index.js",
-    "revision": "defd98308a27f956c964"
-  },
-  {
-    "url": "/CouponIt/_next/static/1eQDwa7xlxhcXbMuBDdrv/pages/otherPage.js",
-    "revision": "e29746d22460c567b632"
-  },
-  {
     "url": "/CouponIt/_next/static/chunks/commons.dd350127c4aabb3f702f.js",
     "revision": "9b8bdbc79b2c4924b24c"
   },
   {
     "url": "/CouponIt/_next/static/css/commons.bbea3502.chunk.css",
     "revision": "9b8bdbc79b2c4924b24c"
+  },
+  {
+    "url": "/CouponIt/_next/static/eEDjTvG6DI6boGY2UlQZ0/pages/_app.js",
+    "revision": "18d4897856637ff005f3"
+  },
+  {
+    "url": "/CouponIt/_next/static/eEDjTvG6DI6boGY2UlQZ0/pages/_error.js",
+    "revision": "d09b7b9ed111721e5d09"
+  },
+  {
+    "url": "/CouponIt/_next/static/eEDjTvG6DI6boGY2UlQZ0/pages/index.js",
+    "revision": "84d0ee540a651efedfb7"
+  },
+  {
+    "url": "/CouponIt/_next/static/eEDjTvG6DI6boGY2UlQZ0/pages/otherPage.js",
+    "revision": "34f58d26c8aca61e2a05"
   },
   {
     "url": "/CouponIt/_next/static/runtime/main-a21604b48a41d27a172b.js",
