@@ -7,7 +7,6 @@ const copyFile = promisify(fs.copyFile);
 const manifest = require('./manifest')
 
 const withCSS = require('@zeit/next-css')
-const withManifest = require('next-manifest')
 const withOffline = require('next-offline')
 
 const workboxOpts = {
@@ -53,6 +52,5 @@ const nextConfig = {
 
 module.exports = compose([
   withCSS,
-  withOffline,
-  withManifest
+  withOffline
 ])(nextConfig)

@@ -20,7 +20,7 @@ const Header = ({ title, meta, moreMeta, showHero}) => {
                 <title>{ title }</title>
                 <link href="./static/bootstrap.min.css" rel="stylesheet" type="text/css" />
                 <link href="./static/app.css" rel="stylesheet" type="text/css" />
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon" />
                 <Manifest />
                 {
                     meta.map((metaProp, i) => <meta key={ `meta-${i}` } { ...metaProp } />

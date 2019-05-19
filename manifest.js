@@ -6,7 +6,7 @@ module.exports = exports = {
     'lang': 'en',
     "icons": [
         {
-        "src": "favicon.ico",
+        "src": "../favicon.ico",
         "sizes": "512x512 256x256 192x192 64x64 32x32 24x24 16x16",
         "type": "image/x-icon"
         }
