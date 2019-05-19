@@ -2,10 +2,13 @@
   "name": "coupon-it",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://shashank1010.github.io/CouponIt",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "bootstrap": "^4.3.1",
+    "gh-pages": "^2.0.1",
     "next": "^8.1.0",
+    "next-offline": "^4.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
@@ -18,7 +21,9 @@
     "build": "next build",
     "start": "next start",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
