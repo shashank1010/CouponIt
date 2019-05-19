@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button"
 import HomeGridCell from "./HomeGridCell"
 
 const Spinner = () => (
-    <Card bg="dark" className="p-5" text="white">
+    <Card bg="dark" className="p-5 my-4" text="white">
         <img src="./static/loader.svg" width="50" className="mx-auto" />
         <p className="m-0 mt-3 text-center">Loading</p>
     </Card>
@@ -33,7 +33,7 @@ class HomeGridCells extends React.Component{
     state ={
         loaded: false,
         cells: [],
-        reachedMax: false
+        loadedCount: 8
     }
 
     clickedCount = 0
@@ -53,12 +53,12 @@ class HomeGridCells extends React.Component{
             const randomCount = this.clickedCount < 5 ? getRandomIndex(newCells) : 0
 
             this.clickedCount++
-            if(this.state.cells.length && this.state.reachedMax) newCells.splice(0, this.state.reachedMax)
+            newCells.splice(0, this.state.loadedCount)
 
             setTimeout(() => {
                 this.setState({
                     loaded: true,
-                    reachedMax: randomCount === 0,
+                    loadedCount: randomCount,
                     cells: [ ...this.state.cells, ...newCells]
                 })
             }, 2000)
@@ -69,7 +69,7 @@ class HomeGridCells extends React.Component{
     }
 
     render() {
-        const {loaded, cells, reachedMax} = this.state;
+        const {loaded, cells, loadedCount} = this.state;
         const cellMap = cells.map((cell, i) => <Col className="d-flex justify-content-stretch" xs="2" sm="3" key={i}><HomeGridCell cell={ cell } /></Col>)
         const hasCells = cellMap.length > 0
 
@@ -86,17 +86,17 @@ class HomeGridCells extends React.Component{
                     <Spinner /> 
                 }
                 {
-                    hasCells && loaded && !reachedMax
+                    loaded && hasCells && loadedCount !== 0
                     ? (
                         <Card>
                             <Button variant="link" onClick={ this.fetchData.bind(this) } style={{ color: 'inherit' }}>Load More</Button>
                         </Card>
-                    ) : (
-                        hasCells && loaded &&
-                        <Card text="white" bg="info">
-                            <Button variant="link" disabled={true} onClick={ () => false } style={{ color: 'inherit' }}> All Items Loaded </Button>
-                        </Card>
-                    )
+                    ) : 
+                        loaded && (
+                            <Card text="white" bg="info">
+                                <Button variant="link" disabled={true} onClick={ () => false } style={{ color: 'inherit' }}> {hasCells ? "All Items Loaded" : "No Items Found"} </Button>
+                            </Card>
+                        )
                 }
             </>
         )

@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
+import Image from "react-bootstrap/Image"
 import Button from "react-bootstrap/Button"
 import Navbar from "react-bootstrap/Navbar"
 import Dropdown from "react-bootstrap/Dropdown"
@@ -16,14 +17,6 @@ import FormControl from "react-bootstrap/FormControl"
 import { nameTrimmer } from "../helpers/nameTrimmer"
 
 class CouponItNavbar extends React.Component {
-	mainHeader = null
-	constructor(props) {
-		super(props)
-		this.mainHeader = React.createRef()
-	}
-	componentDidMount() {
-		console.log(this.mainHeader)
-	}
 	render() {
 		const categories = [
 			"Apparel", "Automotive", "Computers", "Credit Cards", "Electronics", "Games",
@@ -31,21 +24,22 @@ class CouponItNavbar extends React.Component {
 		]
 
 		return <>
-			<Navbar style={{ zIndex: 1021 }} bg="white" ref={this.mainHeader} variant="light" className="position-sticky sticky-top shadow-sm">
+			<Navbar style={{ zIndex: 1021 }} bg="white" variant="light" className="position-sticky sticky-top shadow-sm">
 				<Container>
 					<Navbar.Brand>
-						<img src="./static/logo.png" alt="Coupon Logo" />
+						<Image src="./static/logo.png" alt="Coupon Logo" />
 					</Navbar.Brand>
-					<Navbar.Collapse className="ml-auto" id="basic-navbar-nav">
-						<Nav className="ml-auto">
-							<Nav.Link href="#home">Deals</Nav.Link>
-							<Nav.Link href="#link">Coupons</Nav.Link>
-							<Nav.Link href="#link">Tips</Nav.Link>
-							<Nav.Link href="#link">Contests</Nav.Link>
+					<Navbar.Collapse className="ml-auto" id="coupons-nav">
+						<Nav className="ml-auto open-menu">
+							<Nav.Link className="px-3">Deals</Nav.Link>
+							<Nav.Link active className="px-3">Coupons</Nav.Link>
+							<Nav.Link className="px-3">Tips</Nav.Link>
+							<Nav.Link className="px-3">Contests</Nav.Link>
 						</Nav>
 					</Navbar.Collapse>
 
-					<Form inline>
+					<Form inline className="search">
+						<Image src="./static/ico-search.svg" className="search-icon" />
 						<InputGroup>
 							<FormControl type="text" placeholder="Search" />
 							<InputGroup.Append>
@@ -54,10 +48,10 @@ class CouponItNavbar extends React.Component {
 						</InputGroup>
 					</Form>
 					<Nav.Item className="px-3">
-						<img src="./static/flash-offer.png" alt="Flash offer" />
+						<Image src="./static/flash-offer.png" alt="Flash offer" />
 					</Nav.Item>
 					<Navbar.Toggle as="span" className="d-block border-0">
-						<img src="./static/ico-menu.svg" /> Menu
+						<Image src="./static/ico-menu.svg" /> Menu
 					</Navbar.Toggle>
 				</Container>
 			</Navbar>
