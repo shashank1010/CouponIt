@@ -1,0 +1,26 @@
+.page-hero {
+    --circleOffset: 2.5vw;
+    background: url(../static/header-img.png) center/cover;
+    overflow: hidden;
+}
+.page-hero:before, .page-hero:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 2px;
+    margin: -1px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 calc(var(--circleOffset) * 2) rgba(255,255,255,0.3), 0 0 0 calc(var(--circleOffset) * 4) rgba(255,255,255,0.3), 0 0 0 calc(var(--circleOffset) * 6) rgba(255,255,255,0.3);
+    transform-origin: center;
+}
+.page-hero:before {
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+}
+.page-hero:after {
+    transform: translate(50%, 50%);
+    bottom: 0;
+    right: 0;
+}
