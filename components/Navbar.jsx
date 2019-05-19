@@ -13,6 +13,8 @@ import Container from "react-bootstrap/Container"
 import InputGroup from "react-bootstrap/InputGroup"
 import FormControl from "react-bootstrap/FormControl"
 
+import { nameTrimmer } from "../helpers/nameTrimmer"
+
 class CouponItNavbar extends React.Component {
 	mainHeader = null
 	constructor(props) {
@@ -65,7 +67,7 @@ class CouponItNavbar extends React.Component {
 					{
 						categories.map((category) => (
 							<Nav.Item className="px-3 py-2 text-center" key={category}>
-								<img className="d-block mx-auto mb-1" height="36" src={`./static/categories/${category.toLowerCase().split(' ').join("-")}.svg`} alt="Flash offer" />
+								<img className="d-block mx-auto mb-1" height="36" src={`./static/categories/${ nameTrimmer(category) }.svg`} alt="Flash offer" />
 								<small>{category}</small>
 							</Nav.Item>
 						))

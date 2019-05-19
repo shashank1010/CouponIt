@@ -14,24 +14,22 @@ import Navbar from "./Navbar"
  * @prop meta | all named meta tags with content
  * @prop moreMeta | a valid React node
  */    
-class Header extends React.Component {
-  render() {
-    console.log(this.props)
-    return <>
-        <Head>
-            <title>{ this.props.title }</title>
-            <link href="./static/app.css" rel="stylesheet" type="text/css" />
-            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            {
-                this.props.meta.map((metaProp, i) => <meta key={ `meta-${i}` } { ...metaProp } />
-                )
-            }
-            { this.props.moreMeta }
-        </Head>
-        <Navbar showHero={ true }></Navbar>
-
-    </>;
-  }
+const Header = ({ title, meta, moreMeta, showHero}) => {
+    {
+        return <>
+            <Head>
+                <title>{ title }</title>
+                <link href="./static/app.css" rel="stylesheet" type="text/css" />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                {
+                    meta.map((metaProp, i) => <meta key={ `meta-${i}` } { ...metaProp } />
+                    )
+                }
+                { moreMeta }
+            </Head>
+            <Navbar showHero={ showHero }></Navbar>
+        </>;
+      }
 }
 
 export default Header;
@@ -41,11 +39,13 @@ Header.propTypes = {
     meta: PropTypes.arrayOf(
         PropTypes.objectOf(PropTypes.string.isRequired)
     ),
-    moreMeta: PropTypes.node
+    moreMeta: PropTypes.node,
+    showHero: PropTypes.bool
 }
 
 Header.defaultProps = {
     title: "Coupon It",
     meta: [],
-    moreMeta: null
+    moreMeta: null,
+    showHero: false,
 }
