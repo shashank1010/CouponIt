@@ -25,11 +25,13 @@ const nextConfig = {
       },
     ],
   },
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/CouponIt' : ''
 }
 
-module.exports = withCSS(moduleExists('next-offline')
-  ? withOffline(nextConfig)
-  : nextConfig)
+const offline =  moduleExists('next-offline')
+? withOffline(nextConfig)
+: nextConfig
+module.exports = withCSS(offline)
 
 function moduleExists(name) {
   try {

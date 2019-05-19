@@ -20,10 +20,12 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build && npm run export",
+    "deploy": "gh-pages -d out",
+    "serve": "http-server ./out"
   },
   "eslintConfig": {
     "extends": "react-app"
