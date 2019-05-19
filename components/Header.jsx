@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types"
 import Head from 'next/head'
+import Manifest from 'next-manifest/manifest'
 
 import Navbar from "./Navbar"
 
@@ -20,6 +21,7 @@ const Header = ({ title, meta, moreMeta, showHero}) => {
                 <link href="./static/bootstrap.min.css" rel="stylesheet" type="text/css" />
                 <link href="./static/app.css" rel="stylesheet" type="text/css" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <Manifest />
                 {
                     meta.map((metaProp, i) => <meta key={ `meta-${i}` } { ...metaProp } />
                     )

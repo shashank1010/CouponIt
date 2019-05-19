@@ -1,6 +1,9 @@
-{
-    "short_name": "Coupon-It",
-    "name": "Coupon agrgregation service",
+module.exports = exports = {
+    "short_name": "coupon-it",
+    "name": "Coupon-It",
+    "description": "Coupon agrgregation service",
+    'dir': 'ltr',
+    'lang': 'en',
     "icons": [
         {
         "src": "favicon.ico",

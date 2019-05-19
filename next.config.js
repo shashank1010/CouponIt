@@ -1,32 +1,33 @@
 const fs = require('fs');
+const compose = require('lodash/fp/compose')
 const { join } = require('path');
 const { promisify } = require('util');
 const copyFile = promisify(fs.copyFile);
 
+const manifest = require('./manifest')
+
 const withCSS = require('@zeit/next-css')
-    
-const withOffline = moduleExists('next-offline')
-  ? require('next-offline')
-  : {};
+const withManifest = require('next-manifest')
+const withOffline = require('next-offline')
 
 const workboxOpts = {
-    swDest: 'static/service-worker.js',
-    runtimeCaching: [
-        {
-        urlPattern: /^https?.*/,
-        handler: 'CacheFirst',
-        options: {
-            cacheName: 'https-calls',
-            expiration: {
-            maxEntries: 150,
-            maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
-            },
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-        },
-        },
-    ]
+  swDest: 'static/service-worker.js',
+  runtimeCaching: [
+      {
+      urlPattern: /^https?.*/,
+      handler: 'CacheFirst',
+      options: {
+          cacheName: 'https-calls',
+          expiration: {
+          maxEntries: 150,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
+          },
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+      },
+      },
+  ]
 }
 
 
@@ -34,7 +35,6 @@ const exportPathMap = async function( defaultPathMap, { dev, dir, outDir, distDi
   if (dev) {
       return defaultPathMap;
   }
-
 
   // This will copy robots.txt from your project root into the out directory
   await copyFile(join(dir, 'robots.txt'), join(outDir, 'robots.txt'));
@@ -44,22 +44,15 @@ const exportPathMap = async function( defaultPathMap, { dev, dir, outDir, distDi
   return defaultPathMap;
 }
 
-
 const nextConfig = {
   workboxOpts,
   exportPathMap,
-  target: "serverless"
+  target: "serverless",
+  manifest
 }
 
-const offline =  moduleExists('next-offline')
-? withOffline(nextConfig)
-: nextConfig
-module.exports = withCSS(offline)
-
-function moduleExists(name) {
-  try {
-    return require.resolve(name);
-  } catch (error) {
-    return false;
-  }
-}
+module.exports = compose([
+  withCSS,
+  withOffline,
+  withManifest
+])(nextConfig)
